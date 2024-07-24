@@ -47,7 +47,86 @@
         </div>
     </div>
     <script>
-    // Escríbe aquí tu código
+        const regex = /^[A-Za-z]+$/
+        const validaBoton = document.getElementById("botton")
+
+        validaBoton.addEventListener("click", (event) => {
+            event.preventDefault()
+
+            const nombre = document.getElementById("nombre").value
+            const asunto = document.getElementById("asunto").value
+            const mensaje = document.getElementById("mensaje").value
+            const resultado = document.querySelector(".resultado")
+            let sinError = true // switch que se evaluará en cada IF en caso de haber errores relacionados al regex
+
+            const errorNombre = document.querySelector(".errorNombre")
+            const errorAsunto = document.querySelector(".errorAsunto")
+            const errorMensaje = document.querySelector(".errorMensaje")
+
+            // validar nombre
+            if (validaNombre(nombre)) {
+                // limpiar mensajes de errores
+                errorNombre.innerHTML = ""
+            } else {
+                // desplegar mensaje de error
+                errorNombre.innerHTML = "El nombre es requerido."
+                // limpíar mensaje resultado
+                resultado.innerHTML = ""
+                // cambiar valor de switch si existen errores
+                sinError = false
+            }
+
+            // validar asunto
+            if (validaAsunto(asunto)) {
+                errorAsunto.innerHTML = ""
+            } else {
+                errorAsunto.innerHTML = "El asunto es requerido."
+                resultado.innerHTML = ""
+                sinError = false
+            }
+
+            // validar mensaje
+            if (validaMensaje(mensaje)) {
+                errorMensaje.innerHTML = ""
+            } else {
+                errorMensaje.innerHTML = "El mensaje es requerido."
+                resultado.innerHTML = ""
+                sinError = false
+            }
+
+            // switch ha sido evaluado en cada if, si continúa siendo true se imprime resultado
+            if (sinError) {
+                resultado.innerHTML = "Mensaje enviado con éxito !!!"
+            }
+        });
+
+        const validaNombre = (nombre) => {
+            // en caso de contener los caracteres de regex
+            if (regex.test(nombre)) {
+                return true
+            }
+            // en caso de contener caracteres ajenos a regex
+            return false
+        };
+
+        const validaAsunto = (asunto) => {
+            // en caso de contener los caracteres de regex
+            if (regex.test(asunto)) {
+                return true
+            }
+            // en caso de contener caracteres ajenos a regex
+            return false
+        };
+
+        const validaMensaje = (mensaje) => {
+            // en caso de contener los caracteres de regex
+            if (regex.test(mensaje)) {
+                return true
+            }
+            // en caso de contener caracteres ajenos a regex
+            return false
+        };
+
     </script>
 </body>
 
