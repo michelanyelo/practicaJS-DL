@@ -7,35 +7,67 @@
 </head>
 
 <body>
-<div>
     <div>
-        <h2>
-            Paleta de colores
-        </h2>
-        <div style="display: flex;">
-            <div style="display: flex;flex-direction: column;">
-                <button id="btn-1" style="background-color: #e53e3e; width:100px;height: 100px" type="button">
-                </button>
-                <button id="btn-2" style="background-color: #dd6b20; width:100px;height: 100px" type="button">
-                </button>
-                <button id="btn-3" style="background-color: #faf089; width:100px;height: 100px" type="button">
-                </button>
-                <button id="btn-4" style="background-color: #48bb78; width:100px;height: 100px" type="button">
-                </button>
-                <button id="btn-5" style="background-color: #81e6d9; width:100px;height: 100px" type="button">
-                </button>
-                <button id="btn-6" style="background-color: #d53f8c; width:100px;height: 100px" type="button">
-                </button>
-            </div>
-            <div style="width: 500px;height: 600px">
-                <div id="caja" style="border:1px solid black;width: 100%;height: 100%">
+        <div>
+            <h2>
+                Paleta de colores
+            </h2>
+            <div style="display: flex;">
+                <div style="display: flex;flex-direction: column;">
+                    <button id="btn-1" style="background-color: #e53e3e; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-2" style="background-color: #dd6b20; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-3" style="background-color: #faf089; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-4" style="background-color: #48bb78; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-5" style="background-color: #81e6d9; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-6" style="background-color: #d53f8c; width:100px;height: 100px" type="button">
+                    </button>
+                </div>
+                <div style="width: 500px;height: 600px">
+                    <div id="caja" style="border:1px solid black;width: 100%;height: 100%">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- con foreach -->
+    <!-- <script>
+        // selecciono todos los botones y la caja
+        const buttons = document.querySelectorAll('button');
+        const caja = document.getElementById('caja');
+
+        // agregar un evento click a cada botón
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // obtener el color de fondo del botón
+                const color = button.style.backgroundColor;
+                // cambiar el color de la caja usando el color del botón
+                caja.style.backgroundColor = color;
+            });
+        });
+    </script> -->
+
     <script>
-    // Escríbe aquí tu código
+        // selecciono la caja
+        const caja = document.getElementById('caja');
+
+        // define la función que cambia el color de la caja
+        const cambiarColor = (color) => {
+            caja.style.backgroundColor = color;
+        };
+
+        // asigno eventos a cada botón individualmente
+        document.getElementById('btn-1').addEventListener('click', () => cambiarColor('#e53e3e'));
+        document.getElementById('btn-2').addEventListener('click', () => cambiarColor('#dd6b20'));
+        document.getElementById('btn-3').addEventListener('click', () => cambiarColor('#faf089'));
+        document.getElementById('btn-4').addEventListener('click', () => cambiarColor('#48bb78'));
+        document.getElementById('btn-5').addEventListener('click', () => cambiarColor('#81e6d9'));
+        document.getElementById('btn-6').addEventListener('click', () => cambiarColor('#d53f8c'));
     </script>
 </body>
 
