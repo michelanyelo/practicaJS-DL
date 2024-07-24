@@ -1,0 +1,52 @@
+:root{
+    --green-primary: #40581D;
+    --green-secondary: #729D2D;
+    --green-tertiary: #82c713;
+    
+}
+
+body * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para los encabezados */
+#heroSection h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--green-primary);
+    margin-bottom: 1rem;
+}
+
+#heroSection h2 {
+    font-size: 2rem;
+    color: var(--green-secondary);
+    margin-bottom: 1rem;
+}
+
+#heroSection h3 {
+    font-size: 1.5rem;
+    color: var(--green-tertiary);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* Estilo para el contenedor de tarjetas */
+.card-container .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem;
+}
+
+/* Estilo general para las tarjetas */
+.card {
+    border: 1px solid #82c71369;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body h5 {
+    color: var(--green-primary);
+}
