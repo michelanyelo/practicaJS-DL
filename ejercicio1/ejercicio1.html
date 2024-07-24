@@ -47,7 +47,7 @@
         </div>
     </div>
     <script>
-        const regex = /^[A-Za-z]+$/
+        const regex = /^[A-Za-z\s]+$/ // de la Aa a la Zz permitiendo espacios
         const validaBoton = document.getElementById("botton")
 
         validaBoton.addEventListener("click", (event) => {
